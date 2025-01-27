@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dynamic Table with API Data</title>
+  
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://demos.creative-tim.com/material-dashboard-pro/assets/css/material-dashboard.min.css?v=2.2.2" rel="stylesheet">
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+   <style>
+    /* Full-width table with clean styling */
+    .table-wrapper {
+      margin: 20px auto;
+      max-width: 100%;
+      overflow-x: auto; /* Enable horizontal scrolling */
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    thead th {
+      background-color: #84878b;
+      color: white;
+      text-align: center;
+      padding: 10px;
+    }
+
+    tbody td {
+      padding: 10px;
+      vertical-align: middle;
+    }
+
+    tbody tr:nth-child(even) {
+      background-color: #f8f9fa;
+    }
+
+    tbody tr:hover {
+      background-color: #e9ecef;
+    }
+
+  </style>
+
+
+</head>
+<body>
+
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
+  Open modal
+</button>
+
+<div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+       <h4 class="modal-title">Enter User Data</h4> 
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+        <input type="hidden" name="id" id="id" placeholder="Enter id"><br>
+    <input  type="text" name="name" id="userId" placeholder="Enter userid"><br>
+    <input type="text" name="name" id="title" placeholder="Enter title"><br>
+    <input type="text" name="name" id="body" placeholder="Enter body"><br>
+    <div class="modal-footer">
+         <button type="button" class="btn btn-danger" id="submit" data-bs-dismiss="modal" onclick="addData()">Submit</button>
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+      <div >
+        <table border="2" class="" id="data-table">
+          <thead>
+            <tr class="text-dark">
+              <th>userid</th>
+              <th>id</th>
+              <th class="text-center scope="col"">title</th>
+              <th class="text-center">body</th>
+              <th>edit</th>
+              <th>delete</th>
+            </tr>
+          </thead>
+          <tbody> 
+          </tbody>
+        </table>
+
+        <nav>
+          <ul id="pagination" class="pagination"></ul>
+        </nav>
+      </div>
+
+   
+  <script src="script.js"></script>
+  
+</body>
+</html>
